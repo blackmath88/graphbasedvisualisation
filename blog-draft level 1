@@ -1,0 +1,168 @@
+---
+title: "Stop Reading GitHub Like It’s a Novel: Build a Map Instead"
+date: 2026-02-21
+tags: [graph, visualization, copilot, github, adoption, knowledge-management]
+---
+
+GitHub is amazing.
+
+GitHub is also a very particular kind of punishment.
+
+Because GitHub shows you **one README at a time**.
+
+And when the topic is “Copilot prompts / prompt libraries / system prompts / agent instructions / whatever the internet invented this week”, the standard workflow becomes:
+
+1. Open repo  
+2. Scroll README  
+3. Open 7 links  
+4. Forget why you came  
+5. Repeat until you are basically a browser tab yourself
+
+So I built a tiny thing to make the invisible structure visible:
+
+A **Prompt Library Navigator** — a graph-based index of prompt repositories.
+
+Not a platform.  
+Not a database.  
+Not an enterprise architecture.  
+Just **one HTML file** that gives you the *shape* of the ecosystem.
+
+## Level 1.1: The “Static Snapshot” Trick
+
+In my hub-and-spoke framework, this is **Graph Visualization Level 1.1**:
+
+- ✅ Single self-contained HTML  
+- ✅ Embedded dataset (JSON in the file)  
+- ✅ Interactive exploration  
+- ❌ No live connectors  
+- ❌ No backend  
+- ❌ No “always fresh” data
+
+It’s basically a **living screenshot**.
+Interactive, but not connected.
+
+That’s the point: you can ship it fast.  
+And it’s already impressive because humans don’t need *more data* — they need *structure*.
+
+## What the map shows
+
+Instead of starting with “Which repo do I know?”, you start with:
+
+**“What do I need?”**
+
+So the map uses a simple model:
+
+- **Topics** are anchor nodes (cluster centers)
+- **Repos** connect to one or more topics
+- **Node size** ≈ star count (a rough “gravity” signal)
+- Click → inspect  
+- Filter → narrow the ecosystem  
+- Switch to list view → browse like a normal person
+
+If GitHub is a bookshelf, this is a **library floor plan**.
+
+## Why this matters for Copilot adoption (aka: my day job)
+
+In Copilot adoption, the hardest part is rarely “the feature”.
+
+The hard part is **navigation**:
+
+- Where do we start?
+- What’s relevant for business users vs. devs vs. architects?
+- Which prompt libraries are actually useful, and which are… let’s say… “adventurous”?
+
+A map is a surprisingly good answer because it turns a messy pile of links into:
+
+- **clusters** (themes)
+- **bridges** (multi-topic repos)
+- **islands** (niche repos)
+- and the occasional **Dark Forest** (you know what I mean)
+
+That last one matters: business audiences need safety rails.  
+A good map doesn’t just show everything — it shows **what’s safe to click**.
+
+## The 30-second demo script (steal this)
+
+If you want to show this to leadership without losing them in nerd land:
+
+1. “This is the prompt ecosystem as a map.”
+2. “Click a topic: it filters instantly.”
+3. “Click a repo: you get the ‘why’ and the link.”
+4. “Switch to list view: it becomes a curated catalog.”
+5. “This is one file. No backend. It’s a proof of concept.”
+
+Then stop talking and let them click.
+
+## Why this works psychologically
+
+People don’t remember lists.  
+People remember **shapes**.
+
+A good graph gives you:
+
+- a sense of scale (“oh, this is huge”)
+- a sense of center (“this is the hub”)
+- and a sense of direction (“this is where I should start”)
+
+It’s the difference between reading a travel blog and looking at a metro map.
+
+## Side quest for literature students (and other brave souls)
+
+Because yes — I’m also a literature scholar — here’s a fun challenge:
+
+Take any story and map it as a constellation:
+
+- nodes = characters / locations / themes  
+- edges = interactions / co-occurrence / conflict  
+- signals = importance / faction / “betrayal risk” 😇
+
+**Download this system prompt** and try it yourself:
+
+👉 **Story Constellation System Prompt (download):** `story-constellation-system-prompt.txt`
+
+The catch: the **segmentation and data structuring is on you**.
+
+Which is the whole point.
+
+You’ll learn something usable for once. 😉
+
+### “Would this work with the full text of a whole book?”
+
+Yes — with a realistic constraint:
+
+- If you paste an entire novel into a chat window: you’ll hit limits.
+- But if you **chunk the text** (chapters/scenes) and extract structured events per chunk, it works well.
+- Then you merge the outputs into a node/edge dataset and visualize.
+
+So: *not one prompt, one book.*  
+More like: *one pipeline, one book.*
+
+## What’s next: Level 1.2 (optional upgrade)
+
+Level 1.2 would keep the same UI, but swap the dataset source:
+
+- Live GitHub API for stars, topics, last updated
+- Optional scraping of README headings (as “subtopics”)
+- Auto-rebuild the map weekly
+
+But honestly?
+
+Level 1.1 already does the job:
+It proves the concept: **graphs make navigation humane**.
+
+## If you want to build your own
+
+If you want a template, steal the core recipe:
+
+1. pick a small ecosystem (10–50 things)
+2. define 2–3 node types (keep it simple)
+3. add 2 signals (size + color)
+4. add 2 interactions (click details + filter)
+5. ship as one HTML file
+
+That’s it.
+
+You’re not building a platform.  
+You’re building a **lens**.
+
+And sometimes that’s the real productivity hack.
